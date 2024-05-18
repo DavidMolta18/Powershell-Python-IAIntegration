@@ -87,7 +87,9 @@ def proceso_generacion(prompt):
 
     # Ejecutar comando en Powershell
     output = execute_powershell_command_ise(answer)
-
+    if output == "Error al ejecutar el comando, por favor ingresa un comando válido o inténtalo nuevamente.":
+        answer = "Comando inválido, por favor ingresa tu prompt nuevamente"
+        
     mostrar_respuesta(answer, output)
 
 # Función para mostrar la respuesta del modelo y la salida del comando en una ventana emergente
